@@ -3,7 +3,6 @@ package com.example.bmicalculator
 import android.app.Activity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bmicalculator.databinding.ActivityMainBinding
@@ -53,11 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayResult(bmi: Float) {
-        val info = findViewById<TextView>(R.id.info_tv)
-
-        info.setText(R.string.normal_range_bmi)
-
-        var resultText = ""
+        var resultText: String? = null
         var color = 0
 
         when {
@@ -80,6 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.apply {
+            infoTv.setText(R.string.normal_range_bmi)
             indexTv.text = bmi.toString()
             resultTv.text = resultText
             resultTv.setTextColor(resources.getColor(color))
