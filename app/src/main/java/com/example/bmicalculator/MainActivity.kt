@@ -17,9 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.calculateBtn.setOnClickListener {
-            calculateBMI()
-        }
+        binding.calculateBtn.setOnClickListener { calculateBMI() }
     }
 
     private fun calculateBMI() {
@@ -27,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         val height = binding.heightEt.text.toString()
         if (validateInput(weight, height)) {
             val bmi = weight.toFloat() / ((height.toFloat() / 100) * (height.toFloat() / 100))
-            // get result with two decimal places
             val bmi2Digits = String.format("%.2f", bmi).toFloat()
             displayResult(bmi2Digits)
         }
