@@ -7,6 +7,18 @@
     android:background="@color/layout_background"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/swipe_metric"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="?selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_swap_24"
+        tools:ignore="ContentDescription,RtlSymmetry" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/weight_cv"
         android:layout_width="324dp"
@@ -118,6 +130,7 @@
                 android:layout_height="78dp"
                 android:ems="10"
                 android:hint="@string/zero_value"
+                android:imeOptions="actionDone"
                 android:inputType="number"
                 android:maxLength="3"
                 android:textColor="@color/white"
@@ -153,7 +166,7 @@
         android:id="@+id/calculate_btn"
         android:layout_width="305dp"
         android:layout_height="65dp"
-        android:backgroundTint="@color/button_background"
+        android:backgroundTint="@color/calculate_btn"
         android:elevation="20dp"
         android:text="@string/calculate"
         android:textSize="34sp"

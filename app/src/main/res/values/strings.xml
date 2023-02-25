@@ -9,4 +9,15 @@
     <string name="calculate">Calculate</string>
     <string name="zero_value">0</string>
 
+    <!-- Display Result -->
+    <string name="Underweight">Underweight</string>
+    <string name="Healthy">Healthy</string>
+    <string name="Overweight">Overweight</string>
+    <string name="Obese">Obese</string>
+
+    <!-- Validate Input -->
+    <string name="WeightIsEmpty">Weight is empty</string>
+    <string name="HighIsEmpty">Height is empty</string>
+    <string name="ProbablyIncorrectValues">Probably you gave incorrect values.</string>
+    <string name="CheckYourValues">Please check again your Weight or Height, something does not look good.</string>
 </resources>
