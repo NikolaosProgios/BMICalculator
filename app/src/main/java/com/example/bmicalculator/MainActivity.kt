@@ -5,15 +5,15 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.bmicalculator.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var unitUs = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,13 +23,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             calculateBtn.setOnClickListener { calculateBMI() }
-            swipeMetric.setOnClickListener { swipeMetric() }
-            heightEt.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
+            swipeUnit.setOnClickListener {
+                if(!unitUs) swipeUnit()
+                else showMetricUnit()}
+            heightEt.setOnEditorActionListener { v, actionId, event ->
                 if (event != null && event.keyCode === KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
                     calculateBMI()
                 }
                 false
-            })
+            }
         }
     }
 
@@ -38,7 +40,9 @@ class MainActivity : AppCompatActivity() {
         val height = binding.heightEt.text.toString()
         if (validateInput(weight, height)) {
             hideKeyboard()
-            val bmi = weight.toFloat() / ((height.toFloat() / 100) * (height.toFloat() / 100))
+            val bmi =
+                if (!unitUs) (weight.toFloat() / height.toFloat() / height.toFloat() * 10000)
+                else (weight.toFloat() / height.toFloat() / height.toFloat() * 10000) * 703
             val bmi2Digits = String.format("%.2f", bmi).toFloat()
             displayResult(bmi2Digits)
         }
@@ -86,8 +90,8 @@ class MainActivity : AppCompatActivity() {
                 resultText = getString(R.string.Obese)
                 color = R.color.obese
             }
-
         }
+
         binding.apply {
             infoTv.text = getString(R.string.normal_range_bmi)
             indexTv.text = bmi.toString()
@@ -109,8 +113,31 @@ class MainActivity : AppCompatActivity() {
             resultTv.text = ""
         }
     }
-    private fun swipeMetric(){
 
+    private fun swipeUnit() {
+        if (!unitUs) showUsUnit()
+        else showMetricUnit()
     }
 
+    private fun showUsUnit() {
+        unitUs = true
+        clearResultValues()
+        with(binding) {
+            weightUnit.text = getString(R.string.pounds)
+            heightUnit.text = getString(R.string.feet)
+            heightEtInch.isVisible = true
+            heightUnitInch.isVisible = true
+        }
+    }
+
+    private fun showMetricUnit() {
+        unitUs = false
+        clearResultValues()
+        with(binding) {
+            weightUnit.text = getString(R.string.kg)
+            heightUnit.text = getString(R.string.cm)
+            heightEtInch.isVisible = false
+            heightUnitInch.isVisible = false
+        }
+    }
 }

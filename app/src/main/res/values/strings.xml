@@ -4,8 +4,14 @@
     <string name="normal_range_bmi">(Normal range is 18.5 – 24.9)</string>
     <string name="weight">Weight</string>
     <string name="height">Height</string>
+
+    <!-- Display Unit -->
     <string name="kg">Kg</string>
     <string name="cm">Cm</string>
+    <string name="pounds">pounds (lbs)</string>
+    <string name="feet">feet</string>
+    <string name="inch">in</string>
+
     <string name="calculate">Calculate</string>
     <string name="zero_value">0</string>
 
