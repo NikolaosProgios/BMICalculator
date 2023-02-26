@@ -2,7 +2,6 @@ package com.example.bmicalculator
 
 import android.app.Activity
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -23,11 +22,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             calculateBtn.setOnClickListener { calculateBMI() }
-            swipeUnit.setOnClickListener {
-                if(!unitUs) swipeUnit()
-                else showMetricUnit()}
-            heightEt.setOnEditorActionListener { v, actionId, event ->
-                if (event != null && event.keyCode === KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
+            swipeUnit.setOnClickListener { swipeUnit() }
+            weightEt.setOnEditorActionListener { _, actionId, event ->
+                if (event != null || actionId == EditorInfo.IME_ACTION_NEXT && weightEt.text.isNullOrEmpty()) {
+                    showToastMessage(R.string.WeightIsEmpty)
+                }
+                false
+            }
+            heightEt.setOnEditorActionListener { _, actionId, event ->
+                if (event != null || actionId == EditorInfo.IME_ACTION_DONE) {
+                    calculateBMI()
+                }
+                false
+            }
+            heightEtInch.setOnEditorActionListener { _, actionId, event ->
+                if (event != null || actionId == EditorInfo.IME_ACTION_DONE) {
                     calculateBMI()
                 }
                 false
@@ -38,27 +47,39 @@ class MainActivity : AppCompatActivity() {
     private fun calculateBMI() {
         val weight = binding.weightEt.text.toString()
         val height = binding.heightEt.text.toString()
-        if (validateInput(weight, height)) {
+        val heightInch = binding.heightEtInch.text.toString()
+
+        if (validateInput(weight, height, heightInch)) {
             hideKeyboard()
-            val bmi =
-                if (!unitUs) (weight.toFloat() / height.toFloat() / height.toFloat() * 10000)
-                else (weight.toFloat() / height.toFloat() / height.toFloat() * 10000) * 703
+            val bmi = calculateBMI(weight, height, heightInch)
             val bmi2Digits = String.format("%.2f", bmi).toFloat()
             displayResult(bmi2Digits)
         }
     }
 
-    private fun validateInput(weight: String?, height: String?): Boolean {
+    private fun calculateBMI(weight: String, height: String, heightInch: String): Float {
+        return if (!unitUs) {
+            weight.toFloat() / height.toFloat() / height.toFloat() * 10000
+        } else {
+            val height = height.ifEmpty { "0" }
+            val heightInch = heightInch.ifEmpty { "0" }
+            val heightInches = (height.toDouble() * 12) + heightInch.toDouble()
+            (weight.toFloat() / (heightInches.toFloat() * heightInches.toFloat())) * 703
+        }
+    }
 
+    private fun validateInput(weight: String?, height: String?, heightInch:String?): Boolean {
         return when {
-            weight.isNullOrEmpty() -> {
-                Toast.makeText(this, getString(R.string.WeightIsEmpty), Toast.LENGTH_LONG).show()
-                clearResultValues()
+            weight.isNullOrEmpty() && height.isNullOrEmpty() && heightInch.isNullOrEmpty() -> {
+                showToastMessage(R.string.WightHighIsEmpty)
                 false
             }
-            height.isNullOrEmpty() -> {
-                Toast.makeText(this, getString(R.string.HighIsEmpty), Toast.LENGTH_LONG).show()
-                clearResultValues()
+            weight.isNullOrEmpty() -> {
+                showToastMessage(R.string.WeightIsEmpty)
+                false
+            }
+            height.isNullOrEmpty() && heightInch.isNullOrEmpty() -> {
+                showToastMessage(R.string.HighIsEmpty)
                 false
             }
             else -> {
@@ -73,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 
         when {
             bmi < 18.50 -> {
-                if (bmi < 10) Toast.makeText(this, getString(R.string.CheckYourValues), Toast.LENGTH_LONG).show()
+                if (bmi < 10) showToastMessage(R.string.CheckYourValues)
                 resultText = getString(R.string.Underweight)
                 color = R.color.under_weight
             }
@@ -86,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                 color = R.color.over_weight
             }
             bmi > 29.99 -> {
-                if (bmi > 80) Toast.makeText(this, getString(R.string.CheckYourValues), Toast.LENGTH_LONG).show()
+                if (bmi > 80) showToastMessage(R.string.CheckYourValues)
                 resultText = getString(R.string.Obese)
                 color = R.color.obese
             }
@@ -108,7 +129,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearResultValues() {
         binding.apply {
-            infoTv.text=""
+            weightEt.text.clear()
+            heightEt.text.clear()
+            heightEtInch.text.clear()
+            infoTv.text = ""
             indexTv.text = ""
             resultTv.text = ""
         }
@@ -127,6 +151,8 @@ class MainActivity : AppCompatActivity() {
             heightUnit.text = getString(R.string.feet)
             heightEtInch.isVisible = true
             heightUnitInch.isVisible = true
+            heightEt.imeOptions = EditorInfo.IME_ACTION_NEXT
+            heightUnit.imeOptions = EditorInfo.IME_ACTION_DONE
         }
     }
 
@@ -138,6 +164,11 @@ class MainActivity : AppCompatActivity() {
             heightUnit.text = getString(R.string.cm)
             heightEtInch.isVisible = false
             heightUnitInch.isVisible = false
+            heightEt.imeOptions = EditorInfo.IME_ACTION_DONE
         }
+    }
+
+    private fun showToastMessage(textID: Int) {
+        Toast.makeText(this, getString(textID), Toast.LENGTH_SHORT).show()
     }
 }

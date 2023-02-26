@@ -22,8 +22,9 @@
     <string name="Obese">Obese</string>
 
     <!-- Validate Input -->
-    <string name="WeightIsEmpty">Weight is empty</string>
-    <string name="HighIsEmpty">Height is empty</string>
+    <string name="WeightIsEmpty">Weight is empty.</string>
+    <string name="HighIsEmpty">Height is empty.</string>
+    <string name="WightHighIsEmpty">Please fill in all the values.</string>
     <string name="ProbablyIncorrectValues">Probably you gave incorrect values.</string>
     <string name="CheckYourValues">Please check again your Weight or Height, something does not look good.</string>
 </resources>

@@ -26,3 +26,5 @@ F
 Mapp/src/androidTest/java/com/example/bmicalculator/ExampleInstrumentedTest.kt,a\f\af26be6e4a52fce3143b96963c6deef6203d1612
 n
 >app/src/test/java/com/example/bmicalculator/ExampleUnitTest.kt,c\1\c1e14cf28be895db8efb514c227c0edd9a31bbe4
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
