@@ -21,9 +21,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/weight_cv"
-        android:layout_width="@dimen/medium_width"
+        android:layout_width="@dimen/large_width_x"
         android:layout_height="@dimen/large_height"
-        android:layout_marginTop="@dimen/large_x_margin"
+        android:layout_marginTop="@dimen/large_margin_x"
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="20dp"
         app:cardElevation="15dp"
@@ -40,21 +40,21 @@
                 android:id="@+id/weight_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/small_margin_x"
                 android:text="@string/weight"
                 android:textColor="@color/text_hint"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.124"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.131" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/weight_et"
-                android:layout_width="100dp"
-                android:layout_height="68dp"
+                android:layout_width="@dimen/small_width"
+                android:layout_height="@dimen/small_height_x"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/small_margin_y"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/zero_value"
@@ -64,19 +64,15 @@
                 android:textColorHint="@color/text_hint"
                 android:textSize="45sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.152"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.888" />
+                app:layout_constraintTop_toBottomOf="@id/weight_tv" />
 
             <TextView
                 android:id="@+id/weight_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginStart="@dimen/smaller_margin"
+                android:layout_marginBottom="@dimen/smaller_margin"
                 android:text="@string/kg"
                 android:textColor="@color/text_hint"
                 android:textSize="24sp"
@@ -88,9 +84,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/height_cv"
-        android:layout_width="@dimen/medium_width"
+        android:layout_width="@dimen/large_width_x"
         android:layout_height="@dimen/large_height"
-        android:layout_marginTop="@dimen/large_x_margin"
+        android:layout_marginTop="@dimen/large_margin_x"
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="20dp"
         app:cardElevation="15dp"
@@ -118,8 +114,8 @@
 
             <EditText
                 android:id="@+id/height_et"
-                android:layout_width="100dp"
-                android:layout_height="68dp"
+                android:layout_width="@dimen/small_width"
+                android:layout_height="@dimen/small_height_x"
                 android:layout_marginStart="30dp"
                 android:ems="10"
                 android:hint="@string/zero_value"
@@ -140,8 +136,8 @@
                 android:id="@+id/height_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginStart="@dimen/smaller_margin"
+                android:layout_marginBottom="@dimen/smaller_margin"
                 android:text="@string/cm"
                 android:textColor="@color/text_hint"
                 android:textSize="24sp"
@@ -152,8 +148,8 @@
 
             <EditText
                 android:id="@+id/height_et_inch"
-                android:layout_width="100dp"
-                android:layout_height="68dp"
+                android:layout_width="@dimen/small_width"
+                android:layout_height="@dimen/small_height_x"
                 android:layout_marginStart="10dp"
                 android:ems="10"
                 android:hint="@string/zero_value"
@@ -174,8 +170,8 @@
                 android:id="@+id/height_unit_inch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginStart="@dimen/smaller_margin"
+                android:layout_marginBottom="@dimen/smaller_margin"
                 android:text="@string/inch"
                 android:textColor="@color/text_hint"
                 android:textSize="24sp"
@@ -188,9 +184,9 @@
 
     <Button
         android:id="@+id/calculate_btn"
-        android:layout_width="@dimen/small_width"
+        android:layout_width="@dimen/large_width"
         android:layout_height="65dp"
-        android:layout_marginTop="@dimen/medium_x_margin"
+        android:layout_marginTop="@dimen/medium_margin_x"
         android:backgroundTint="@color/calculate_btn"
         android:elevation="20dp"
         android:text="@string/calculate"
@@ -204,9 +200,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/result_cv"
-        android:layout_width="@dimen/medium_width"
-        android:layout_height="@dimen/large_x_height"
-        android:layout_marginTop="@dimen/medium_x_margin"
+        android:layout_width="@dimen/large_width_x"
+        android:layout_height="@dimen/large_height_x"
+        android:layout_marginTop="@dimen/medium_margin_x"
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="20dp"
         app:cardElevation="15dp"

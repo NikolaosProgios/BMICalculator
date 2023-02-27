@@ -3,22 +3,29 @@
     <dimen name="swipe_units">33dp</dimen>
 
     <!-- Margins -->
+    <dimen name="smaller_margin">5dp</dimen>
     <dimen name="small_margin">10dp</dimen>
-    <dimen name="small_x_margin">15dp</dimen>
+    <dimen name="small_margin_x">15dp</dimen>
+    <dimen name="small_margin_y">18dp</dimen>
     <dimen name="medium_margin">33dp</dimen>
-    <dimen name="medium_x_margin">42dp</dimen>
+    <dimen name="medium_margin_x">42dp</dimen>
     <dimen name="large_margin">52dp</dimen>
-    <dimen name="large_x_margin">60dp</dimen>
+    <dimen name="large_margin_x">60dp</dimen>
+    <dimen name="large_margin_y">65dp</dimen>
 
 
     <!-- Width -->
-    <dimen name="small_width">305dp</dimen>
-    <dimen name="medium_width">324dp</dimen>
-    <dimen name="large_width">345dp</dimen>
+    <dimen name="small_width">100dp</dimen>
+    <dimen name="medium_width">305dp</dimen>
+
+    <dimen name="large_width">305dp</dimen>
+    <dimen name="large_width_x">324dp</dimen>
+    <dimen name="large_width_y">345dp</dimen>
 
     <!-- Height -->
     <dimen name="small_height">65dp</dimen>
+    <dimen name="small_height_x">68dp</dimen>
     <dimen name="medium_height">100dp</dimen>
     <dimen name="large_height">141dp</dimen>
-    <dimen name="large_x_height">170dp</dimen>
+    <dimen name="large_height_x">170dp</dimen>
 </resources>
