@@ -9,30 +9,28 @@
 
     <ImageView
         android:id="@+id/swipe_unit"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="@dimen/swipe_units"
+        android:layout_height="@dimen/swipe_units"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
         android:background="?selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_outline_swap_circle_24"
-        tools:ignore="ContentDescription,RtlSymmetry" />
+        tools:ignore="ContentDescription" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/weight_cv"
-        android:layout_width="324dp"
-        android:layout_height="141dp"
+        android:layout_width="@dimen/medium_width"
+        android:layout_height="@dimen/large_height"
+        android:layout_marginTop="@dimen/large_x_margin"
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="20dp"
         app:cardElevation="15dp"
         app:cardMaxElevation="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -90,18 +88,16 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/height_cv"
-        android:layout_width="324dp"
-        android:layout_height="141dp"
+        android:layout_width="@dimen/medium_width"
+        android:layout_height="@dimen/large_height"
+        android:layout_marginTop="@dimen/large_x_margin"
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="20dp"
         app:cardElevation="15dp"
         app:cardMaxElevation="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401">
+        app:layout_constraintTop_toBottomOf="@id/weight_cv">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -192,35 +188,32 @@
 
     <Button
         android:id="@+id/calculate_btn"
-        android:layout_width="305dp"
+        android:layout_width="@dimen/small_width"
         android:layout_height="65dp"
+        android:layout_marginTop="@dimen/medium_x_margin"
         android:backgroundTint="@color/calculate_btn"
         android:elevation="20dp"
         android:text="@string/calculate"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
+        app:layout_constraintTop_toBottomOf="@id/height_cv" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/result_cv"
-        android:layout_width="324dp"
-        android:layout_height="170dp"
+        android:layout_width="@dimen/medium_width"
+        android:layout_height="@dimen/large_x_height"
+        android:layout_marginTop="@dimen/medium_x_margin"
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="20dp"
         app:cardElevation="15dp"
         app:cardMaxElevation="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885">
+        app:layout_constraintTop_toBottomOf="@id/calculate_btn">
 
         <LinearLayout
             android:layout_width="match_parent"

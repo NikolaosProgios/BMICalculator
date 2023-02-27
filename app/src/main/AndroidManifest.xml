@@ -9,12 +9,14 @@
         android:icon="@drawable/ic_launcher_bmi_cal_a"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_bmi_cal_a"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.BMICalculator"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

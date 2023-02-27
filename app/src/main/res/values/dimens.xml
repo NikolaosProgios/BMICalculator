@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="swipe_units">33dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="small_margin">10dp</dimen>
+    <dimen name="small_x_margin">15dp</dimen>
+    <dimen name="medium_margin">33dp</dimen>
+    <dimen name="medium_x_margin">42dp</dimen>
+    <dimen name="large_margin">52dp</dimen>
+    <dimen name="large_x_margin">60dp</dimen>
+
+
+    <!-- Width -->
+    <dimen name="small_width">305dp</dimen>
+    <dimen name="medium_width">324dp</dimen>
+    <dimen name="large_width">345dp</dimen>
+
+    <!-- Height -->
+    <dimen name="small_height">65dp</dimen>
+    <dimen name="medium_height">100dp</dimen>
+    <dimen name="large_height">141dp</dimen>
+    <dimen name="large_x_height">170dp</dimen>
+</resources>
