@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         if (validateInput(weight, height, heightInch)) {
             hideKeyboard()
             val bmi = calculateBMI(weight, height, heightInch)
-            val bmi2Digits = String.format("%.2f", bmi).toFloat()
+            val bmi2Digits = String.format("%.2f", bmi).replace(',','.').toFloat()
             displayResult(bmi2Digits)
         }
     }
