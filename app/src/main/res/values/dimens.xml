@@ -3,29 +3,39 @@
     <dimen name="swipe_units">33dp</dimen>
 
     <!-- Margins -->
-    <dimen name="smaller_margin">5dp</dimen>
-    <dimen name="small_margin">10dp</dimen>
-    <dimen name="small_margin_x">15dp</dimen>
-    <dimen name="small_margin_y">18dp</dimen>
-    <dimen name="medium_margin">33dp</dimen>
-    <dimen name="medium_margin_x">42dp</dimen>
-    <dimen name="large_margin">52dp</dimen>
-    <dimen name="large_margin_x">60dp</dimen>
-    <dimen name="large_margin_y">65dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="small_margin_x">10dp</dimen>
+    <dimen name="medium_margin">13dp</dimen>
+    <dimen name="medium_margin_x">15dp</dimen>
+    <dimen name="medium_margin_y">18dp</dimen>
+    <dimen name="large_margin">30dp</dimen>
+    <dimen name="large_margin_x">42dp</dimen>
+    <dimen name="xlarge_margin">52dp</dimen>
+    <dimen name="xlarge_margin_x">60dp</dimen>
+    <dimen name="xlarge_margin_y">65dp</dimen>
 
 
     <!-- Width -->
     <dimen name="small_width">100dp</dimen>
     <dimen name="medium_width">305dp</dimen>
-
-    <dimen name="large_width">305dp</dimen>
-    <dimen name="large_width_x">324dp</dimen>
-    <dimen name="large_width_y">345dp</dimen>
+    <dimen name="large_width">324dp</dimen>
 
     <!-- Height -->
-    <dimen name="small_height">65dp</dimen>
-    <dimen name="small_height_x">68dp</dimen>
-    <dimen name="medium_height">100dp</dimen>
+    <dimen name="small_height">68dp</dimen>
     <dimen name="large_height">141dp</dimen>
     <dimen name="large_height_x">170dp</dimen>
+
+    <!-- Corner Radius -->
+    <dimen name="small_corner_radius">15dp</dimen>
+    <dimen name="medium_corner_radius">20dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="small_text_size">20sp</dimen>
+    <dimen name="small_text_size_x">24sp</dimen>
+    <dimen name="medium_text_size">34sp</dimen>
+    <dimen name="medium_text_size_x">40sp</dimen>
+    <dimen name="large_text_size">45sp</dimen>
+    <dimen name="large_text_size_x">60sp</dimen>
+
+
 </resources>

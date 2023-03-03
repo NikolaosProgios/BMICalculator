@@ -7,7 +7,7 @@
 
     <!-- Display Unit -->
     <string name="kg">Kg</string>
-    <string name="cm">Cm</string>
+    <string name="cm">cm</string>
     <string name="pounds">pounds (lbs)</string>
     <string name="feet">feet</string>
     <string name="inch">in</string>
